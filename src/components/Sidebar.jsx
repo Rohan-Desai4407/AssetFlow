@@ -1,15 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Box, ArrowRightLeft, CalendarCheck, Wrench, Settings } from 'lucide-react';
+import { LayoutDashboard, Box, ArrowRightLeft, CalendarCheck, Wrench, Settings, ClipboardCheck, BarChart3, BellRing } from 'lucide-react';
 
 const Sidebar = () => {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={20} /> },
+    { name: 'Organization', path: '/settings', icon: <Settings size={20} /> },
     { name: 'Assets', path: '/assets', icon: <Box size={20} /> },
     { name: 'Allocations', path: '/allocations', icon: <ArrowRightLeft size={20} /> },
     { name: 'Bookings', path: '/bookings', icon: <CalendarCheck size={20} /> },
     { name: 'Maintenance', path: '/maintenance', icon: <Wrench size={20} /> },
-    { name: 'Organization', path: '/settings', icon: <Settings size={20} /> },
+    { name: 'Asset Audit', path: '/audit', icon: <ClipboardCheck size={20} /> },
+    { name: 'Reports', path: '/reports', icon: <BarChart3 size={20} /> },
+    { name: 'Notifications', path: '/notifications', icon: <BellRing size={20} /> },
   ];
 
   return (
@@ -21,7 +24,7 @@ const Sidebar = () => {
         <h2 style={{ fontSize: '1.25rem', marginBottom: 0, fontWeight: '700', color: 'var(--primary-color)' }}>AssetFlow</h2>
       </div>
       
-      <nav style={{ flex: 1, padding: '1rem 0' }}>
+      <nav style={{ flex: 1, padding: '1rem 0', overflowY: 'auto' }}>
         <ul style={{ listStyle: 'none' }}>
           {navItems.map((item) => (
             <li key={item.path}>
